@@ -37,4 +37,28 @@ ax.set_title("Sistema de Lorenz")
 ax.set_xlabel("X")
 ax.set_ylabel("Y")
 ax.set_zlabel("Z")
+
+import plotly.graph_objects as go
+
+fig = go.Figure(data=go.Scatter3d(
+    x=x, y=y, z=z,
+    mode='lines',
+    line=dict(color='blue', width=2)
+))
+
+fig.update_layout(
+    title='Atractor de Lorenz (interactivo)',
+    scene=dict(
+        xaxis_title='X',
+        yaxis_title='Y',
+        zaxis_title='Z'
+    )
+)
+
+# Guardar como archivo HTML
+fig.write_html("lorenz_3d.html")
+
+# También puedes mostrarlo en el notebook:
+fig.show()
+
 plt.show()

@@ -45,4 +45,5 @@ axs[2].set_xlabel("Y")
 axs[2].set_ylabel("Z")
 
 plt.tight_layout()
+plt.savefig("lorenz_2d.png", dpi=300)
 plt.show()
